@@ -2,14 +2,10 @@ package com.example.foodrestaurent;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -44,7 +40,6 @@ public class food_adapter extends ArrayAdapter<food> {
         convertView=LayoutInflater.from(getContext()).inflate(R.layout.layout_order_menu_new,parent,false);
         TextView price=convertView.findViewById(R.id.foodprice);
         TextView name=convertView.findViewById(R.id.foodname);
-
         TextView counter=convertView.findViewById(R.id.counter);
         ImageView plus=convertView.findViewById(R.id.plus);
         ImageView minus=convertView.findViewById(R.id.minus);
@@ -54,6 +49,7 @@ public class food_adapter extends ArrayAdapter<food> {
 //        Bitmap bm=BitmapFactory.decodeResource(getContext().getResources(),resourceId,10);
 //        String str=helpermethods.bitmaptostring(bm);
 //        bm=helpermethods.StringToBitMap(str);
+        counter.setText("0");
         Bitmap bm=getItem(position).getBm();
         im.setImageBitmap(bm);
         String n=getItem(position).getFood_name();

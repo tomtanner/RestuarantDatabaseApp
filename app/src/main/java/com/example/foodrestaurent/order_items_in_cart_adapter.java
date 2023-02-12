@@ -16,7 +16,6 @@ public class order_items_in_cart_adapter extends RecyclerView.Adapter<order_item
     public static class ViewHolder extends RecyclerView.ViewHolder{
        TextView foodname,foodprice,quantity;
        ImageView im;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             foodname=(TextView) itemView.findViewById(R.id.foodname);

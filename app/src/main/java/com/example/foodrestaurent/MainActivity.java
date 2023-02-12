@@ -48,34 +48,31 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                email=emailtext.getText().toString();
-                password=passwordtext.getText().toString();
-                customer cm=new customer(email,password);
-                if(Objects.equals(email, "admin") && password.equals("a")) {
+                email = emailtext.getText().toString();
+                password = passwordtext.getText().toString();
+                customer cm = new customer(email, password);
+                if (Objects.equals(email, "a") && password.equals("a")) {
                     Toast.makeText(MainActivity.this, "ADMIN LOGIN", Toast.LENGTH_SHORT).show();
-                    Intent i=new Intent(MainActivity.this,Adminupload.class);
+                    Intent i = new Intent(MainActivity.this, Adminupload.class);
                     startActivity(i);
-                }
-              else if(dbh.findcustomer(cm)==0)
-                  Toast.makeText(MainActivity.this, "Incorrect password", Toast.LENGTH_SHORT).show();
-              else if(dbh.findcustomer(cm)==1) {
-                  //the customer has logged in
-                  Toast.makeText(MainActivity.this, "Login", Toast.LENGTH_SHORT).show();
-                  Intent i = new Intent(MainActivity.this,order_menu.class);
-                  boolean success=dbh.addorder(cm);
-                  ArrayList<ArrayList<String>>al=new ArrayList<ArrayList<String>>();
-                  al=dbh.getallorderdetails();
-                  int cust_id= dbh.getcustomeridbyemail(cm);
-                  i.putExtra("sendcustid",cust_id);
-                  i.putExtra("sendcustemail",cm.getEmail());
-                  startActivity(i);
-                  //insert order into order_table
+                } else if (dbh.findcustomer(cm) == 0)
+                    Toast.makeText(MainActivity.this, "Incorrect password", Toast.LENGTH_SHORT).show();
+                else if (dbh.findcustomer(cm) == 1) {
+                    //the customer has logged in
+                    Toast.makeText(MainActivity.this, "Login", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(MainActivity.this, order_menu.class);
+                    boolean success = dbh.addorder(cm);
+                    ArrayList<ArrayList<String>> al = new ArrayList<ArrayList<String>>();
+                    al = dbh.getallorderdetails();
+                    int cust_id = dbh.getcustomeridbyemail(cm);
+                    i.putExtra("sendcustid", cust_id);
+                    i.putExtra("sendcustemail", cm.getEmail());
+                    startActivity(i);
+                    //insert order into order_table
 
-              }
-              else
-                  Toast.makeText(MainActivity.this, "No account found in the database", Toast.LENGTH_SHORT).show();
+                } else
+                    Toast.makeText(MainActivity.this, "No account found in the database", Toast.LENGTH_SHORT).show();
             }
-                
         });
     }
 }

@@ -11,7 +11,6 @@ import android.graphics.Shader;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,7 +47,7 @@ public class order_menu extends AppCompatActivity {
         lv=findViewById(R.id.lv);
         textView=findViewById(R.id.textView);
        cartbutton=findViewById(R.id.gotocart);
-        fd=new food_adapter(order_menu.this,R.layout.activity_order_menu,foodlist);//initialising the food adapter
+        fd=new food_adapter(order_menu.this,R.layout.layout_order_menu_new,foodlist);//initialising the food adapter
         //initialpopulation of sendorderdetails
 
         //populating food menulist from food_table
@@ -89,7 +88,7 @@ public class order_menu extends AppCompatActivity {
                 for(int j=0;j<fd.getCount();j++) {
                      name=fd.getViewByPosition(j,lv).findViewById(R.id.foodname);
                     String foodname=name.getText().toString();
-                     price=fd.getViewByPosition(j,lv).findViewById(R.id.price);
+                     price=fd.getViewByPosition(j,lv).findViewById(R.id.foodprice);
                      counter=fd.getViewByPosition(j,lv).findViewById(R.id.counter);
                     int quantity=Integer.parseInt(counter.getText().toString());
                     if(quantity!=0) {

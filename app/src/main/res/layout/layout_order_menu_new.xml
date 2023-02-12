@@ -12,7 +12,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         app:cardCornerRadius="25dp"
-        app:cardBackgroundColor="#F8E7C966"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +42,8 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <TextView
                 android:id="@+id/foodprice"
@@ -52,7 +52,6 @@
                 android:layout_marginEnd="192dp"
                 android:layout_marginBottom="11dp"
                 android:text="TextView"
-                android:textColor="@color/material_dynamic_neutral100"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -84,17 +83,16 @@
 
             <TextView
                 android:id="@+id/counter"
-                android:layout_width="22dp"
-                android:layout_height="24dp"
-                android:layout_alignLeft="@+id/plus"
-                android:layout_marginStart="6dp"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="@color/white"
+                android:layout_width="17dp"
+                android:layout_height="25dp"
+                android:text="TextView"
                 app:layout_constraintBottom_toTopOf="@+id/foodprice"
+                app:layout_constraintEnd_toEndOf="@+id/minus"
+                app:layout_constraintHorizontal_bias="0.166"
                 app:layout_constraintStart_toEndOf="@+id/plus"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toBottomOf="@+id/foodname" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

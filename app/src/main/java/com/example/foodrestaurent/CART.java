@@ -90,6 +90,7 @@ public class CART extends AppCompatActivity {
                 if (reciveddata.size()!=0) {
                     Intent i1 = new Intent(CART.this, OrderPlaced.class);
                     startActivity(i1);
+
                 }
             }
         });
